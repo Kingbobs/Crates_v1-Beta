@@ -3,6 +3,6 @@ name: Crates
 author: Kingbobs
 version: 1.0.0
 description: Advanced Crate plugin for Conflict
-main: crates/Main
+main: Crates_v1-Beta/Main
 api: [3.0.0]
 ...
