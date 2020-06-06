@@ -5,7 +5,6 @@ version: 1.0.0
 description: Advanced Crate plugin for Conflict
 main: Crates_v1-Beta\Main
 api: [3.0.0]
-
   givekey:
     description: Gives a player the specified crate key
     usage: /givekey <player> <key id> <amount>
