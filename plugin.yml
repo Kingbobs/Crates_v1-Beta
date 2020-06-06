@@ -1,0 +1,24 @@
+---
+name: Crates
+author: Kingbobs
+version: 1-Beta
+description: Advanced Crate plugin for Conflict
+main: crates\Main
+api: [3.0.0]
+
+  givekey:
+    description: Gives a player the specified crate key
+    usage: /givekey <player> <key id> <amount>
+permissions:
+  crates:
+    description: Main crates permission
+    default: op
+    children:
+      crates.command:
+        description: Main crates command permission
+        default: op
+        children:
+          crates.command.givekey:
+            description: Permission for /givekey command
+            default: op
+...
