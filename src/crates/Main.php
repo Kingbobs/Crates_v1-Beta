@@ -93,6 +93,7 @@ class Main extends PluginBase{
 		$this->getCommand("givekey")->setExecutor(new GiveKeyCommand($this));
 		$this->setCrateManager();
 		$this->loadEconomy();
+		return true;
 	}
 
 	public function loadConfigs(){
