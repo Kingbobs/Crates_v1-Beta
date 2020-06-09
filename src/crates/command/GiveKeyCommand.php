@@ -41,7 +41,7 @@ class GiveKeyCommand implements CommandExecutor{
 					$existingKeys = $this->plugin->getKeyData($name);
 					$this->plugin->saveKeyData($name, [$id => (isset($existingKeys[$id]) ? $existingKeys[$id] : 0) + $amount]);
 					$sender->sendMessage(TF::GREEN . "Key given.");
-					//					$this->plugin->giveKey($args[0], $args[1], $amount);
+										$this->plugin->giveKey($args[0], $args[1], $amount);
 					return true;
 				}else{
 					$sender->sendMessage(TF::RED . "Couldn't find a crate key with ID " . $args[1] . "!");
