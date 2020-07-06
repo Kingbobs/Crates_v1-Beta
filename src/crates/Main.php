@@ -104,7 +104,7 @@ class Main extends PluginBase{
 	}
 
 	public function loadEconomy(){
-		if(($plugin = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI")) instanceof Plugin){
+		if(($plugin === $this->getServer()->getPluginManager()->getPlugin("EconomyAPI")) instanceof Plugin){
 			$this->economy = $plugin;
 		}
 	}
@@ -126,7 +126,6 @@ class Main extends PluginBase{
 		if(!$this->crateManager instanceof CrateManager){
 			$this->crateManager = new CrateManager($this);
 		}
-		return;
 	}
 
 	public function giveKey(Player $player, $id, $amount = 1){
