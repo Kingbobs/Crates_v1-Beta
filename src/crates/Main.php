@@ -90,7 +90,7 @@ class Main extends PluginBase{
 		}
 		$this->loadConfigs();
 		new EventListener($this);
-		$this->getCommand("givekey")->setExecutor(new GiveKeyCommand($this));
+		$this->getServer()->getCommandMap()->register("givekey", new GiveKeyCommand("givekey", $this));
 		$this->setCrateManager();
 		$this->loadEconomy();
 		return true;
