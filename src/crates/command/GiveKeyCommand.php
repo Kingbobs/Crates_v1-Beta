@@ -28,7 +28,7 @@ class GiveKeyCommand implements CommandExecutor{
 		return $this->plugin;
 	}
 
-	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+	function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
 		if($sender->hasPermission("crates.command.givekey")){
 			if(isset($args[1])){
 				if(isset($this->plugin->settings["keys"][$args[1]])){
