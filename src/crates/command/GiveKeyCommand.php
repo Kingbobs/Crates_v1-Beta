@@ -16,7 +16,7 @@ use pocketmine\command\CommandExecutor;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\TextFormat as TF;
 
-class GiveKeyCommand implements CommandExecutor{
+class GiveKeyCommand{
 
 	private $plugin;
 
@@ -28,7 +28,7 @@ class GiveKeyCommand implements CommandExecutor{
 		return $this->plugin;
 	}
 
-	function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
 		if($sender->hasPermission("crates.command.givekey")){
 			if(isset($args[1])){
 				if(isset($this->plugin->settings["keys"][$args[1]])){
