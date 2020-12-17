@@ -80,19 +80,19 @@ class CrateManager{
 	public function add($name, $description, $crateId, array $locations, array $itemPrizes, array $moneyPrizes){
 		foreach($locations as $crate){
 			if($crate instanceof Position){
-				//				if(!$crate->getLevel()->getBlock($crate)->getId() === Block::CHEST) {
-				//					$nbt = new CompoundTag(false, [
-				//						new ListTag("Items", []),
-				//						new StringTag("id", Tile::CHEST),
-				//						new IntTag("x", $crate->x),
-				//						new IntTag("y", $crate->y),
-				//						new IntTag("z", $crate->z),
-				//					]);
-				//					$nbt->Items->setTagType(NBT::TAG_Compound);
-				//					$crate->getLevel()->setBlock($crate, Block::get(Block::CHEST));
-				//					$tile = Tile::createTile(Tile::CHEST, $crate->getLevel()->getChunk($crate->x >> 4, $crate->z >> 4), $nbt);
-				//					$crate->getLevel()->addTile($tile);
-				//				}
+		                				if(!$crate->getLevel()->getBlock($crate)->getId() === Block::CHEST) {
+									$nbt = new CompoundTag(false, [
+										new ListTag("Items", []),
+										new StringTag("id", Tile::CHEST),
+										new IntTag("x", $crate->x),
+										new IntTag("y", $crate->y),
+										new IntTag("z", $crate->z),
+									]);
+									$nbt->Items->setTagType(NBT::TAG_Compound);
+									$crate->getLevel()->setBlock($crate, Block::get(Block::CHEST));
+									$tile = Tile::createTile(Tile::CHEST, $crate->getLevel()->getChunk($crate->x >> 4, $crate->z >> 4), $nbt);
+									$crate->getLevel()->addTile($tile);
+								}
 				$crateClass = new Crate($name, $description, $locations, $crateId, $itemPrizes, $moneyPrizes);
 				$this->plugin->crates[self::clean($name)] = $crateClass;
 				$this->plugin->text[] = new FloatingTextParticle(new Vector3($crate->x + 0.5, $crate->y + 0.5, $crate->z + 0.5), str_pad($description, strlen($name), " ", STR_PAD_BOTH), str_pad($name, strlen($description), " ", STR_PAD_BOTH));
