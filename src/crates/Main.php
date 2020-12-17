@@ -121,11 +121,11 @@ class Main extends PluginBase{
 		return $this->economy;
 	}
 
-	public function getCrateManager(): void{
+	public function getCrateManager(){
 		return $this->crateManager;
 	}
 
-	public function setCrateManager(): void{
+	public function setCrateManager(){
 		if(!$this->crateManager instanceof CrateManager){
 			$this->crateManager = new CrateManager($this);
 		}
