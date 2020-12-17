@@ -112,8 +112,8 @@ class Main extends PluginBase{
 	}
 
 	public function onDisable(){
-		$this->crateManager->close();
-		unset($this->crateManager);
+		//$this->crateManager->close();
+		//unset($this->crateManager);
 	}
 
 	public function getEconomy(){
