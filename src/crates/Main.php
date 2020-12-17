@@ -22,6 +22,8 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as TF;
 
+use onebone\economyapi\EconomyAPI;
+
 class Main extends PluginBase{
 
 	/**
