@@ -86,7 +86,8 @@ class Main extends PluginBase{
 		return $shortTags;
 	}
 
-	public function onEnable(){
+	//public function onEnable(){
+	public function onEnable(): void {
 		if(!is_dir($this->getDataFolder() . self::DATA_FOLDER)){
 			@mkdir($this->getDataFolder() . self::DATA_FOLDER);
 		}
@@ -98,33 +99,33 @@ class Main extends PluginBase{
 		return true;
 	}
 
-	public function loadConfigs(){
+	public function loadConfigs(): void {
 		$this->saveResource("Settings.yml");
 		$this->settings = (new Config($this->getDataFolder() . "Settings.yml", Config::YAML))->getAll();
 		$this->saveResource("Crates.json");
 		$this->crateData = (new Config($this->getDataFolder() . "Crates.json", Config::JSON))->getAll();
 	}
 
-	public function loadEconomy(){
+	public function loadEconomy(): void {
 		if(($plugin === $this->getServer()->getPluginManager()->getPlugin("EconomyAPI")) instanceof Plugin){
 			$this->economy = $plugin;
 		}
 	}
 
-	public function onDisable(){
-		//$this->crateManager->close();
-		//unset($this->crateManager);
+	public function onDisable(): void {
+		$this->crateManager->close();
+		unset($this->crateManager);
 	}
 
-	public function getEconomy(){
+	public function getEconomy(): void {
 		return $this->economy;
 	}
 
-	public function getCrateManager(){
+	public function getCrateManager(): void{
 		return $this->crateManager;
 	}
 
-	public function setCrateManager(){
+	public function setCrateManager(): void{
 		if(!$this->crateManager instanceof CrateManager){
 			$this->crateManager = new CrateManager($this);
 		}
