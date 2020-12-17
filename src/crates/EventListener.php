@@ -26,6 +26,7 @@ use pocketmine\network\protocol\AddItemEntityPacket;
 use pocketmine\network\protocol\BlockEventPacket;
 use pocketmine\network\protocol\SetEntityDataPacket;
 use pocketmine\tile\Chest;
+use pocketmine\scheduler\PluginTask;
 use pocketmine\utils\TextFormat as TF;
 
 class EventListener implements Listener{
